@@ -83,7 +83,8 @@ TibetCompass/
 
 ### Deploy
 ```bash
-cd /Users/dhekha/Desktop/TibetCompass
+git clone https://github.com/Dhesel28/tibet-compass.git
+cd tibet-compass
 chmod +x deploy.sh
 ./deploy.sh
 ```
