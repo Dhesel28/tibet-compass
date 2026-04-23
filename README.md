@@ -2,6 +2,9 @@
 
 **DS5730 Final Project | Dhesel Khando**
 
+🌐 **Live App:** https://main.d3k747k0gvjsw5.amplifyapp.com
+🔗 **API Endpoint:** `POST https://yyll5i6nsc.execute-api.us-east-1.amazonaws.com/prod/ask`
+
 An agentic LLM-powered web application that serves as a cultural knowledge companion for Tibetan culture, language, history, and diaspora — built on AWS using the Bedrock Converse API with tool use.
 
 ---
@@ -103,23 +106,23 @@ After deployment, the script prints 5 ready-to-run curl commands, one per tool:
 
 ```bash
 # Culture
-curl -s -X POST 'YOUR_API_URL' -H 'Content-Type: application/json' \
+curl -s -X POST 'https://yyll5i6nsc.execute-api.us-east-1.amazonaws.com/prod/ask' -H 'Content-Type: application/json' \
   -d '{"message": "Tell me about Losar festival", "userId": "test"}' | python3 -m json.tool
 
 # Translation
-curl -s -X POST 'YOUR_API_URL' -H 'Content-Type: application/json' \
+curl -s -X POST 'https://yyll5i6nsc.execute-api.us-east-1.amazonaws.com/prod/ask' -H 'Content-Type: application/json' \
   -d '{"message": "How do you say thank you in Tibetan?", "userId": "test"}' | python3 -m json.tool
 
 # History
-curl -s -X POST 'YOUR_API_URL' -H 'Content-Type: application/json' \
+curl -s -X POST 'https://yyll5i6nsc.execute-api.us-east-1.amazonaws.com/prod/ask' -H 'Content-Type: application/json' \
   -d '{"message": "What happened in Tibet in 1959?", "userId": "test"}' | python3 -m json.tool
 
 # Resources
-curl -s -X POST 'YOUR_API_URL' -H 'Content-Type: application/json' \
+curl -s -X POST 'https://yyll5i6nsc.execute-api.us-east-1.amazonaws.com/prod/ask' -H 'Content-Type: application/json' \
   -d '{"message": "What scholarships are available for Tibetan students?", "userId": "test"}' | python3 -m json.tool
 
 # Story
-curl -s -X POST 'YOUR_API_URL' -H 'Content-Type: application/json' \
+curl -s -X POST 'https://yyll5i6nsc.execute-api.us-east-1.amazonaws.com/prod/ask' -H 'Content-Type: application/json' \
   -d '{"message": "Tell me a story about a Tibetan family celebrating Losar in exile", "userId": "test"}' | python3 -m json.tool
 ```
 
@@ -131,7 +134,7 @@ Each response includes `tool_used` field.
 
 ### Run 20-query eval:
 ```bash
-python3 evaluate.py --api-url YOUR_API_URL
+python3 evaluate.py --api-url https://yyll5i6nsc.execute-api.us-east-1.amazonaws.com/prod/ask
 ```
 Opens `eval_results.json` — fill in `relevance`, `cultural_accuracy`, `quality` (1–5) for each entry.
 
