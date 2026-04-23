@@ -1,14 +1,8 @@
-# Tibet Compass — Technical Report
-**DS5730: Cloud Computing and AI Systems**
-**Dhesel Khando | April 2026**
-
----
-
 ## a. Problem and Use Case
 
 ### What problem are you solving?
 
-Tibetan culture, language, and history are among the least accessible knowledge domains on the internet. For members of the Tibetan diaspora — particularly younger generations born outside Tibet — finding accurate, culturally grounded information requires navigating fragmented, often politically skewed sources. A Tibetan-American student in Nashville who wants to learn the correct pronunciation of a mantra, understand the historical significance of 1959, or find a scholarship specifically for Tibetan students has no single trusted, conversational resource.
+Tibetan culture, language, and history are among the least accessible knowledge domains on the internet. For members of the Tibetan diaspora - particularly younger generations born outside Tibet - finding accurate, culturally grounded information requires navigating fragmented, often politically skewed sources. A Tibetan-American student in Nashville who wants to learn the correct pronunciation of a mantra, understand the historical significance of 1959, or find a scholarship specifically for Tibetan students has no single trusted, conversational resource.
 
 Tibet Compass solves this by providing a single intelligent interface that routes questions to the right knowledge domain automatically, giving rich, culturally accurate answers in natural language.
 
@@ -21,7 +15,7 @@ Tibet Compass solves this by providing a single intelligent interface that route
 
 ### What does the application do?
 
-Tibet Compass is a chat-based web application where users ask questions in natural language. The LLM reads each question and decides which of five specialized knowledge tools to invoke — or answers directly from its training if no tool is needed. It returns a rich, contextual response with a visible "tool badge" showing which domain was consulted.
+Tibet Compass is a chat-based web application where users ask questions in natural language. The LLM reads each question and decides which of five specialized knowledge tools to invoke - or answers directly from its training if no tool is needed. It returns a rich, contextual response with a visible "tool badge" showing which domain was consulted.
 
 ---
 
@@ -32,13 +26,13 @@ Tibet Compass is a chat-based web application where users ask questions in natur
 ```
 User (Browser)
     ↓ POST /ask (JSON: message, userId, conversationId)
-AWS Amplify (Frontend — index.html)
+AWS Amplify (Frontend - index.html)
     ↓
-API Gateway HTTP API — tibet-compass-api
+API Gateway HTTP API - tibet-compass-api
     ↓
-AWS Lambda — tibet-compass-lambda (Python 3.12, 60s, 512MB)
+AWS Lambda - tibet-compass-lambda (Python 3.12, 60s, 512MB)
     ↓
-Amazon Bedrock — Converse API (amazon.nova-lite-v1:0)
+Amazon Bedrock - Converse API (amazon.nova-lite-v1:0)
     ↓ LLM selects tool
     ├── cultural_facts    → culture.json keyword search
     ├── translate_phrase  → phrases.json lookup
@@ -47,7 +41,7 @@ Amazon Bedrock — Converse API (amazon.nova-lite-v1:0)
     └── tell_story        → LLM narrative generation (Turn 2)
     ↓
 DynamoDB: TibetCompassHistory  (conversation memory)
-DynamoDB: TibetCompassLogs     (observability — one record per request)
+DynamoDB: TibetCompassLogs     (observability - one record per request)
 ```
 
 ### Main components
@@ -66,7 +60,7 @@ DynamoDB: TibetCompassLogs     (observability — one record per request)
 
 The agentic loop runs inside Lambda in two turns using the Bedrock Converse API:
 
-**Turn 1:** The full message history + user input + all 5 tool definitions (toolConfig) are sent to Nova Lite. The LLM reads each tool's description and decides whether to call one, which one, and with what input — or returns an answer directly (`end_turn`).
+**Turn 1:** The full message history + user input + all 5 tool definitions (toolConfig) are sent to Nova Lite. The LLM reads each tool's description and decides whether to call one, which one, and with what input - or returns an answer directly (`end_turn`).
 
 **Turn 2 (if tool used):** The tool executes locally (keyword search against JSON), the result is appended to the message history as a `toolResult`, and a second Converse call generates the final natural-language response incorporating the retrieved knowledge.
 
@@ -87,7 +81,7 @@ Turn 1: LLM → stopReason == "end_turn" → return directly (no tool)
 
 On every request, the LLM makes two independent decisions:
 
-1. **Whether to use a tool at all.** For a greeting like "Tashi Delek! What can you help me with?" — the model returns directly with no tool invoked (`tool_used: null`).
+1. **Whether to use a tool at all.** For a greeting like "Tashi Delek! What can you help me with?" - the model returns directly with no tool invoked (`tool_used: null`).
 2. **Which of the five tools to invoke.** The model reads each tool's description and maps the user's intent: a question about "thangka painting" routes to `cultural_facts`; "what does Om Mani Padme Hum mean?" routes to `translate_phrase`; "what happened in 1959?" routes to `historical_context`. These are genuinely different behaviors with different knowledge sources.
 
 ### What tools or workflow choices does it control?
@@ -103,10 +97,10 @@ A fixed pipeline would use keyword matching or regex rules to route queries: "if
 
 - "What do Tibetans eat?" and "Tell me about traditional Tibetan food" both route to `cultural_facts` despite having no overlapping keywords with the tool name
 - Ambiguous queries (e.g., "Tell me about the Dalai Lama's life") correctly route to `historical_context` even though "culture" might seem relevant
-- Conversational questions with no clear domain route directly with no tool — the LLM decides a tool is unnecessary
+- Conversational questions with no clear domain route directly with no tool - the LLM decides a tool is unnecessary
 - The routing is non-deterministic: different phrasings of the same question may produce different (but reasonable) tool selections
 
-In our 20-query evaluation, the system achieved 100% correct routing — but more importantly, every routing decision was made by the LLM reading intent, not by a hardcoded rule.
+In our 20-query evaluation, the system achieved 100% correct routing - but more importantly, every routing decision was made by the LLM reading intent, not by a hardcoded rule.
 
 ---
 
@@ -114,7 +108,7 @@ In our 20-query evaluation, the system achieved 100% correct routing — but mor
 
 ### Model: Amazon Nova Lite (`amazon.nova-lite-v1:0`)
 
-Nova Lite was chosen because it supports the Bedrock Converse API with tool use natively, requires no model access approval form (unlike Claude on Bedrock), and is fast enough for sub-5 second responses. Nova Pro or Claude would give richer responses but at higher cost and latency. For a knowledge companion focused on retrieval + synthesis, Nova Lite performs well — as confirmed by our evaluation results.
+Nova Lite was chosen because it supports the Bedrock Converse API with tool use natively, requires no model access approval form (unlike Claude on Bedrock), and is fast enough for sub-5 second responses. Nova Pro or Claude would give richer responses but at higher cost and latency. For a knowledge companion focused on retrieval + synthesis, Nova Lite performs well - as confirmed by our evaluation results.
 
 ### Orchestration: Custom (no framework)
 
@@ -122,7 +116,7 @@ No LangGraph, CrewAI, or LangChain was used. The agentic loop is 30 lines of Pyt
 
 ### Knowledge Base: JSON files (keyword search)
 
-The domain knowledge is stored as structured JSON files bundled inside the Lambda package. Retrieval is a simple keyword intersection between the query words and each entry's `keywords[]` array. This is not RAG — there is no vector database. The choice was deliberate:
+The domain knowledge is stored as structured JSON files bundled inside the Lambda package. Retrieval is a simple keyword intersection between the query words and each entry's `keywords[]` array. This is not RAG - there is no vector database. The choice was deliberate:
 
 - The knowledge domain is small and curated (< 100 entries across 4 files)
 - Keyword search is deterministic, zero-latency, and zero-cost
@@ -174,12 +168,12 @@ Every Lambda invocation writes one structured record to the `TibetCompassLogs` D
 
 ### How it helps inspect system behavior
 
-- **Routing inspection:** Scan all logs and count `tool_selected` values to see distribution — done by `compute_metrics.py`
+- **Routing inspection:** Scan all logs and count `tool_selected` values to see distribution - done by `compute_metrics.py`
 - **Failure debugging:** Filter `error != ""` to find all failed requests and read the exception
 - **Latency tracking:** Sort by `latency_ms` to identify slow queries; P95 outliers are visible in the scan
 - **Conversation replay:** All turns for a given `conversation_id` can be reconstructed by querying PK=`LOG#<userId>`
 
-From our 57 logged requests, 2 errors (3.5%) were identified — both were early invocations before the `toolConfig` bug fix was deployed.
+From our 57 logged requests, 2 errors (3.5%) were identified - both were early invocations before the `toolConfig` bug fix was deployed.
 
 ---
 
@@ -193,7 +187,7 @@ From our 57 logged requests, 2 errors (3.5%) were identified — both were early
 
 **How tracked:** `evaluate.py` sends 20 representative queries (4 per domain), compares `actual_tool` against `expected_tool`, and reports accuracy. The tool selection is also logged in DynamoDB for ongoing monitoring.
 
-**Result:** **20/20 (100%)** — all queries routed to the correct tool domain.
+**Result:** **20/20 (100%)** - all queries routed to the correct tool domain.
 
 | Domain | Queries | Correct |
 |---|---|---|
@@ -251,12 +245,12 @@ Every query was routed to the correct tool. This exceeded the target of 18/20 (9
 
 ### Representative successes
 
-**Culture — Thangka painting:**
+**Culture - Thangka painting:**
 > "Describe the art of thangka painting"
 > → Tool: `cultural_facts` | Latency: 2,061ms
-> Response correctly described canvas material, iconographic rules, silk brocade mounting, and meditation use — all sourced from the knowledge base and expanded by Nova Lite.
+> Response correctly described canvas material, iconographic rules, silk brocade mounting, and meditation use - all sourced from the knowledge base and expanded by Nova Lite.
 
-**Translation — Mantra:**
+**Translation - Mantra:**
 > "What does Om Mani Padme Hum mean?"
 > → Tool: `translate_phrase` | Latency: 1,981ms
 > Response included Tibetan script (ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྂ།), Wylie romanization, syllable-by-syllable meaning, and cultural context about Chenrezig.
@@ -264,7 +258,7 @@ Every query was routed to the correct tool. This exceeded the target of 18/20 (9
 **Story generation:**
 > "Narrate the journey of a Tibetan family crossing the Himalayas to freedom"
 > → Tool: `tell_story` | Latency: 3,448ms
-> Produced a 4-paragraph narrative with culturally specific details (mani stones, Dharamsala, tsampa) — the LLM correctly used the tool sentinel to generate a narrative in Turn 2 rather than a fact lookup.
+> Produced a 4-paragraph narrative with culturally specific details (mani stones, Dharamsala, tsampa) - the LLM correctly used the tool sentinel to generate a narrative in Turn 2 rather than a fact lookup.
 
 **Direct (no tool):**
 > "Tashi Delek! What can you help me with?"
@@ -306,19 +300,19 @@ Every query was routed to the correct tool. This exceeded the target of 18/20 (9
 | Frontend | AWS Amplify | Manual deployment via S3 presigned URL. URL: https://main.d3k747k0gvjsw5.amplifyapp.com |
 | API | AWS API Gateway (HTTP API) | `POST /ask` route, prod stage. URL: https://yyll5i6nsc.execute-api.us-east-1.amazonaws.com/prod/ask |
 | Backend | AWS Lambda | `tibet-compass-lambda`, Python 3.12, 512MB, 60s timeout, us-east-1 |
-| Database | AWS DynamoDB | Two tables: `TibetCompassHistory`, `TibetCompassLogs` — on-demand billing |
-| Model | Amazon Bedrock | `amazon.nova-lite-v1:0` — enabled via Bedrock model access console |
+| Database | AWS DynamoDB | Two tables: `TibetCompassHistory`, `TibetCompassLogs` - on-demand billing |
+| Model | Amazon Bedrock | `amazon.nova-lite-v1:0` - enabled via Bedrock model access console |
 
 ### Deployment process
 
-All infrastructure was provisioned via `deploy.sh` — a Bash script that creates all AWS resources in order: DynamoDB tables → IAM role → Lambda → API Gateway → Amplify. The script is idempotent: re-running it skips already-existing resources and only updates what changed.
+All infrastructure was provisioned via `deploy.sh` - a Bash script that creates all AWS resources in order: DynamoDB tables → IAM role → Lambda → API Gateway → Amplify. The script is idempotent: re-running it skips already-existing resources and only updates what changed.
 
 ### Practical constraints
 
 - **Model availability:** Nova Lite must be explicitly enabled in the Bedrock console before the first invocation. The deploy script checks availability and exits with a clear error if not enabled.
 - **IAM propagation:** After creating the IAM role, a 10-second sleep is required before Lambda can assume it.
 - **Amplify manual deployment:** Amplify's `create-deployment` API uses a `zipUploadUrl` (not `fileUploadUrls`) for zip-based uploads. The index.html must be at the zip root.
-- **Knowledge base size:** All four JSON files total ~60KB and load at cold start. No external database calls are made for retrieval — this keeps latency low.
+- **Knowledge base size:** All four JSON files total ~60KB and load at cold start. No external database calls are made for retrieval - this keeps latency low.
 
 ---
 
@@ -326,7 +320,7 @@ All infrastructure was provisioned via `deploy.sh` — a Bash script that create
 
 ### What I learned
 
-1. **Bedrock Converse API tool use requires `toolConfig` in every call** — not just Turn 1. If the message history contains `toolUse` or `toolResult` blocks, Bedrock validates that `toolConfig` is present in the subsequent call. This caught me by surprise and required a quick fix after deployment.
+1. **Bedrock Converse API tool use requires `toolConfig` in every call** - not just Turn 1. If the message history contains `toolUse` or `toolResult` blocks, Bedrock validates that `toolConfig` is present in the subsequent call. This caught me by surprise and required a quick fix after deployment.
 
 2. **Nova Lite surfaces its reasoning in `<thinking>` tags** that appear in the response text. These needed to be stripped with a regex before returning to the user. This is a model-specific quirk not documented prominently.
 
@@ -334,7 +328,7 @@ All infrastructure was provisioned via `deploy.sh` — a Bash script that create
 
 4. **Keyword search is surprisingly effective at small scale.** I expected to need vector search, but simple word intersection with curated `keywords[]` arrays handles all 20 evaluation queries correctly because the knowledge entries are specific and non-overlapping.
 
-5. **AWS Amplify's manual deployment API is counterintuitive** — `create-deployment` returns a `zipUploadUrl` for uploading a zip file, not per-file URLs. The zip must contain `index.html` at the root (not in a subdirectory).
+5. **AWS Amplify's manual deployment API is counterintuitive** - `create-deployment` returns a `zipUploadUrl` for uploading a zip file, not per-file URLs. The zip must contain `index.html` at the root (not in a subdirectory).
 
 ### What would I improve with more time
 
@@ -352,5 +346,4 @@ All infrastructure was provisioned via `deploy.sh` — a Bash script that create
 
 ---
 
-*Tibet Compass — DS5730 Final Project | Dhesel Khando | April 2026*
-*Tashi Delek! བཀྲ་ཤིས་བདེ་ལེགས།*
+Dhesel Khando
