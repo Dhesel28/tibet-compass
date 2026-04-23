@@ -388,3 +388,9 @@ echo "  curl -s -X POST '$API_URL' -H 'Content-Type: application/json' \\"
 echo "    -d '{\"message\": \"Tell me a story about a Tibetan family celebrating Losar in exile\", \"userId\": \"test\"}' | python3 -m json.tool"
 echo ""
 log "Tashi Delek! (བཀྲ་ཤིས་བདེ་ལེགས།)"
+
+# -------------------------------------------------------------------------------
+# This code was developed with assistance from Claude (Anthropic AI).
+# Claude was used to help with code structure, refactoring, and debugging.
+# Final implementation, testing, and validation were done by the author.
+# -------------------------------------------------------------------------------

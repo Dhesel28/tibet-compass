@@ -179,3 +179,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# -------------------------------------------------------------------------------
+# This code was developed with assistance from Claude (Anthropic AI).
+# Claude was used to help with code structure, refactoring, and debugging.
+# Final implementation, testing, and validation were done by the author.
+# -------------------------------------------------------------------------------

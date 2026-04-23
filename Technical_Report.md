@@ -1,3 +1,9 @@
+# Tibet Compass
+
+**Dhesel Khando**
+
+---
+
 ## a. Problem and Use Case
 
 ### What problem are you solving?
@@ -346,4 +352,6 @@ All infrastructure was provisioned via `deploy.sh` - a Bash script that creates 
 
 ---
 
-Dhesel Khando
+## Acknowledgements
+
+This report's grammar and language were refined with the assistance of the Claude language model (Anthropic, 2024).
