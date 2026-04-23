@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tibet Compass 🏔 — Your Tibetan Culture Guide</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --crimson:    #8B0000;
+      --gold:       #D4AF37;
+      --cream:      #FFF8E7;
+      --dark-red:   #6B0000;
+      --warm-brown: #5C3A1E;
+      --light-gold: #F5E6A3;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background: linear-gradient(135deg, #1a0000 0%, #3d1a00 50%, #1a0a00 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #333;
+    }
+
+    /* ── Header ── */
+    .app-header {
+      background: linear-gradient(90deg, var(--dark-red), #a00000, var(--dark-red));
+      border-bottom: 3px solid var(--gold);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .app-header .logo-area { display: flex; align-items: center; gap: 12px; }
+    .app-header h1 { color: var(--gold); margin: 0; font-size: 1.6rem; font-weight: 700; letter-spacing: 0.5px; }
+    .app-header .subtitle { color: #f5deb3; font-size: 0.8rem; margin: 0; opacity: 0.85; }
+    .prayer-flag {
+      width: 30px; height: 4px; display: inline-block; border-radius: 2px;
+      background: linear-gradient(90deg, #0038a8 20%, white 20% 40%, #d40000 40% 60%, #00a550 60% 80%, #ffd700 80%);
+    }
+    .flag-row { display: flex; flex-direction: column; gap: 4px; }
+
+    /* ── Layout ── */
+    .main-layout {
+      display: flex;
+      height: calc(100vh - 80px);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
+      gap: 16px;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      background: rgba(255, 248, 231, 0.95);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      overflow-y: auto;
+    }
+    .sidebar h6 {
+      color: var(--dark-red);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .tool-legend-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+      color: var(--warm-brown);
+    }
+    .tool-legend-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .tool-legend-text strong { display: block; color: #444; font-size: 0.78rem; }
+
+    .sidebar-divider { border-top: 1px solid rgba(212,175,55,0.3); margin: 16px 0; }
+
+    .sample-q {
+      font-size: 0.75rem;
+      color: var(--dark-red);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      margin-bottom: 4px;
+      border: 1px solid rgba(139,0,0,0.15);
+      transition: background 0.2s;
+      display: block;
+      text-decoration: none;
+    }
+    .sample-q:hover { background: rgba(139,0,0,0.08); color: var(--dark-red); }
+
+    /* ── Chat Area ── */
+    .chat-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 248, 231, 0.97);
+      border-radius: 16px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      overflow: hidden;
+    }
+
+    /* ── Chat Header ── */
+    .chat-header {
+      background: linear-gradient(90deg, var(--crimson), #9a0000);
+      padding: 12px 20px;
+      color: var(--gold);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .online-dot { width: 8px; height: 8px; background: #4caf50; border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:0.4; } }
+
+    /* ── Messages ── */
+    .messages-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      scroll-behavior: smooth;
+    }
+    .messages-container::-webkit-scrollbar { width: 6px; }
+    .messages-container::-webkit-scrollbar-track { background: transparent; }
+    .messages-container::-webkit-scrollbar-thumb { background: rgba(139,0,0,0.2); border-radius: 3px; }
+
+    /* ── Message Bubbles ── */
+    .message { display: flex; align-items: flex-start; gap: 10px; }
+    .message.user { flex-direction: row-reverse; }
+
+    .avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .avatar.bot  { background: linear-gradient(135deg, var(--crimson), #b00000); }
+    .avatar.user { background: linear-gradient(135deg, var(--warm-brown), #8B6914); }
+
+    .bubble {
+      max-width: 72%;
+      padding: 12px 16px;
+      border-radius: 16px;
+      line-height: 1.55;
+      font-size: 0.9rem;
+      position: relative;
+    }
+    .bubble.bot {
+      background: white;
+      border: 1px solid rgba(212,175,55,0.3);
+      border-top-left-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .bubble.user {
+      background: linear-gradient(135deg, var(--crimson), #9a0000);
+      color: white;
+      border-top-right-radius: 4px;
+    }
+    .bubble p { margin: 0 0 6px; }
+    .bubble p:last-child { margin-bottom: 0; }
+    .bubble strong { color: var(--dark-red); }
+    .bubble.user strong { color: var(--light-gold); }
+
+    /* ── Tool Badge ── */
+    .tool-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 8px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .tool-badge.culture    { background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; }
+    .tool-badge.translation{ background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+    .tool-badge.history    { background: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
+    .tool-badge.resources  { background: #f3e5f5; color: #7b1fa2; border: 1px solid #ce93d8; }
+    .tool-badge.story      { background: #fff8e1; color: #f57f17; border: 1px solid #ffe082; }
+    .tool-badge.direct     { background: #f5f5f5; color: #616161; border: 1px solid #e0e0e0; }
+
+    .latency-text { font-size: 0.65rem; color: #aaa; margin-top: 4px; }
+
+    /* ── Typing Indicator ── */
+    .typing-indicator { display: flex; align-items: center; gap: 5px; padding: 10px; }
+    .typing-dot {
+      width: 7px; height: 7px; background: var(--crimson); border-radius: 50%;
+      animation: typing-bounce 1.2s infinite ease-in-out;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typing-bounce { 0%,60%,100%{ transform: translateY(0); } 30%{ transform: translateY(-6px); } }
+
+    /* ── Input Area ── */
+    .input-area {
+      padding: 16px 20px;
+      border-top: 1px solid rgba(212,175,55,0.3);
+      background: rgba(255,250,240,0.8);
+    }
+    .input-row { display: flex; gap: 10px; align-items: flex-end; }
+    .message-input {
+      flex: 1;
+      border: 1.5px solid rgba(139,0,0,0.25);
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      resize: none;
+      background: white;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      min-height: 44px;
+      max-height: 120px;
+      line-height: 1.4;
+    }
+    .message-input:focus {
+      outline: none;
+      border-color: var(--crimson);
+      box-shadow: 0 0 0 3px rgba(139,0,0,0.1);
+    }
+    .send-btn {
+      background: linear-gradient(135deg, var(--crimson), #9a0000);
+      border: none;
+      border-radius: 12px;
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: opacity 0.2s, transform 0.1s;
+      flex-shrink: 0;
+    }
+    .send-btn:hover { opacity: 0.88; }
+    .send-btn:active { transform: scale(0.95); }
+    .send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .input-hint { font-size: 0.7rem; color: #aaa; margin-top: 6px; text-align: center; }
+
+    /* ── Welcome Card ── */
+    .welcome-card {
+      background: linear-gradient(135deg, rgba(139,0,0,0.06), rgba(212,175,55,0.08));
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .welcome-card h5 { color: var(--dark-red); margin-bottom: 6px; }
+    .welcome-card p  { font-size: 0.85rem; color: #666; margin: 0; }
+    .tibetan-script  { font-size: 1.3rem; color: var(--crimson); font-weight: 300; display: block; margin-bottom: 6px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .main-layout { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header class="app-header">
+  <div class="flag-row">
+    <div class="prayer-flag"></div>
+    <div class="prayer-flag"></div>
+    <div class="prayer-flag"></div>
+  </div>
+  <div class="logo-area">
+    <div>
+      <h1>🏔 Tibet Compass</h1>
+      <p class="subtitle">Your Agentic Guide to Tibetan Culture, Language & History</p>
+    </div>
+  </div>
+</header>
+
+<!-- ── Main Layout ── -->
+<div class="main-layout">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <h6>🧭 Knowledge Domains</h6>
+
+    <div class="tool-legend-item">
+      <span class="tool-legend-icon">🏔</span>
+      <div class="tool-legend-text">
+        <strong>Culture</strong>
+        Festivals, food, arts, religion
+      </div>
+    </div>
+    <div class="tool-legend-item">
+      <span class="tool-legend-icon">📜</span>
+      <div class="tool-legend-text">
+        <strong>Translation</strong>
+        Phrases, mantras, script
+      </div>
+    </div>
+    <div class="tool-legend-item">
+      <span class="tool-legend-icon">📖</span>
+      <div class="tool-legend-text">
+        <strong>History</strong>
+        Events, figures, diaspora
+      </div>
+    </div>
+    <div class="tool-legend-item">
+      <span class="tool-legend-icon">🌐</span>
+      <div class="tool-legend-text">
+        <strong>Resources</strong>
+        Orgs, scholarships, support
+      </div>
+    </div>
+    <div class="tool-legend-item">
+      <span class="tool-legend-icon">✨</span>
+      <div class="tool-legend-text">
+        <strong>Stories</strong>
+        Narratives &amp; creative tales
+      </div>
+    </div>
+    <div class="tool-legend-item">
+      <span class="tool-legend-icon">💬</span>
+      <div class="tool-legend-text">
+        <strong>Direct</strong>
+        General conversation
+      </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+    <h6>💡 Try Asking</h6>
+
+    <a class="sample-q" onclick="fillInput('Tell me about the Losar festival')">🎊 Losar festival</a>
+    <a class="sample-q" onclick="fillInput('How do you say hello in Tibetan?')">👋 Tibetan greetings</a>
+    <a class="sample-q" onclick="fillInput('What happened in Tibet in 1959?')">📖 1959 uprising</a>
+    <a class="sample-q" onclick="fillInput('What scholarships exist for Tibetan students?')">🎓 Scholarships</a>
+    <a class="sample-q" onclick="fillInput('Tell me a story about a Tibetan family celebrating Losar in exile')">✨ Tell a story</a>
+    <a class="sample-q" onclick="fillInput('What is Om Mani Padme Hum?')">🙏 Sacred mantra</a>
+    <a class="sample-q" onclick="fillInput('What is thangka painting?')">🎨 Thangka art</a>
+    <a class="sample-q" onclick="fillInput('Where do Tibetan refugees live in the US?')">🌎 Diaspora USA</a>
+
+    <div class="sidebar-divider"></div>
+    <div style="font-size:0.7rem; color:#888; text-align:center; line-height:1.5;">
+      Powered by<br/>
+      <strong style="color:var(--dark-red)">Amazon Nova Lite</strong><br/>
+      via Bedrock Converse API<br/>
+      <span style="opacity:0.6">Agentic tool selection</span>
+    </div>
+  </aside>
+
+  <!-- ── Chat Area ── -->
+  <main class="chat-area">
+    <div class="chat-header">
+      <div class="online-dot"></div>
+      Tibet Compass is ready &nbsp;·&nbsp; Ask about culture, language, history, or diaspora
+    </div>
+
+    <div class="messages-container" id="messagesContainer">
+      <!-- Welcome -->
+      <div class="welcome-card">
+        <span class="tibetan-script">བཀྲ་ཤིས་བདེ་ལེགས།</span>
+        <h5>Tashi Delek! Welcome to Tibet Compass 🏔</h5>
+        <p>I'm your agentic knowledge guide for Tibetan culture, language, history, and diaspora.
+          Ask me anything — I'll choose the right knowledge tool to give you a rich, culturally accurate answer.</p>
+      </div>
+    </div>
+
+    <!-- ── Input ── -->
+    <div class="input-area">
+      <div class="input-row">
+        <textarea
+          id="messageInput"
+          class="message-input"
+          placeholder="Ask about Tibetan culture, history, language, or diaspora…"
+          rows="1"
+          onkeydown="handleKeyDown(event)"
+          oninput="autoResize(this)"
+        ></textarea>
+        <button class="send-btn" id="sendBtn" onclick="sendMessage()" title="Send">
+          ➤
+        </button>
+      </div>
+      <p class="input-hint">Press Enter to send · Shift+Enter for new line · Tool badge shows which domain was used</p>
+    </div>
+  </main>
+
+</div>
+
+<script>
+  const API_URL = 'https://yyll5i6nsc.execute-api.us-east-1.amazonaws.com/prod/ask';
+
+  // Per-session state
+  const USER_ID = 'user_' + Math.random().toString(36).slice(2, 10);
+  let conversationId = null;
+  let isLoading = false;
+
+  // Tool → display config
+  const TOOL_CONFIG = {
+    'cultural_facts':    { label: 'Culture',     icon: '🏔', cls: 'culture'     },
+    'translate_phrase':  { label: 'Translation', icon: '📜', cls: 'translation' },
+    'historical_context':{ label: 'History',     icon: '📖', cls: 'history'     },
+    'diaspora_resources':{ label: 'Resources',   icon: '🌐', cls: 'resources'   },
+    'tell_story':        { label: 'Story',       icon: '✨', cls: 'story'       },
+    null:                { label: 'Direct',      icon: '💬', cls: 'direct'      },
+    undefined:           { label: 'Direct',      icon: '💬', cls: 'direct'      },
+  };
+
+  function fillInput(text) {
+    const inp = document.getElementById('messageInput');
+    inp.value = text;
+    autoResize(inp);
+    inp.focus();
+  }
+
+  function autoResize(el) {
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  }
+
+  function scrollToBottom() {
+    const c = document.getElementById('messagesContainer');
+    c.scrollTop = c.scrollHeight;
+  }
+
+  function appendMessage(role, text, toolUsed, latencyMs) {
+    const container = document.getElementById('messagesContainer');
+
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `message ${role}`;
+
+    const avatar = document.createElement('div');
+    avatar.className = `avatar ${role}`;
+    avatar.textContent = role === 'bot' ? '🏔' : '👤';
+
+    const bubbleWrap = document.createElement('div');
+
+    const bubble = document.createElement('div');
+    bubble.className = `bubble ${role}`;
+    bubble.innerHTML = formatText(text);
+
+    bubbleWrap.appendChild(bubble);
+
+    // Tool badge (bot only)
+    if (role === 'bot') {
+      const cfg = TOOL_CONFIG[toolUsed] || TOOL_CONFIG[null];
+      const badge = document.createElement('div');
+      badge.className = `tool-badge ${cfg.cls}`;
+      badge.innerHTML = `${cfg.icon} ${cfg.label}`;
+      bubbleWrap.appendChild(badge);
+
+      if (latencyMs) {
+        const lat = document.createElement('div');
+        lat.className = 'latency-text';
+        lat.textContent = `${latencyMs}ms`;
+        bubbleWrap.appendChild(lat);
+      }
+    }
+
+    msgDiv.appendChild(avatar);
+    msgDiv.appendChild(bubbleWrap);
+    container.appendChild(msgDiv);
+    scrollToBottom();
+  }
+
+  function showTyping() {
+    const container = document.getElementById('messagesContainer');
+    const div = document.createElement('div');
+    div.className = 'message bot';
+    div.id = 'typingIndicator';
+
+    const avatar = document.createElement('div');
+    avatar.className = 'avatar bot';
+    avatar.textContent = '🏔';
+
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble bot';
+    bubble.innerHTML = '<div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>';
+
+    div.appendChild(avatar);
+    div.appendChild(bubble);
+    container.appendChild(div);
+    scrollToBottom();
+  }
+
+  function removeTyping() {
+    const el = document.getElementById('typingIndicator');
+    if (el) el.remove();
+  }
+
+  function formatText(text) {
+    // Basic markdown-ish rendering
+    return text
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/\n/g, '<br/>')
+      .replace(/^/, '<p>')
+      .replace(/$/, '</p>');
+  }
+
+  async function sendMessage() {
+    if (isLoading) return;
+    const input = document.getElementById('messageInput');
+    const text = input.value.trim();
+    if (!text) return;
+
+    // Clear input
+    input.value = '';
+    input.style.height = 'auto';
+
+    // Show user message
+    appendMessage('user', text, null, null);
+
+    // Disable send
+    isLoading = true;
+    document.getElementById('sendBtn').disabled = true;
+    showTyping();
+
+    try {
+      const body = {
+        message: text,
+        userId: USER_ID,
+      };
+      if (conversationId) body.conversationId = conversationId;
+
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+
+      removeTyping();
+
+      if (!res.ok) {
+        appendMessage('bot', `Error ${res.status}: ${res.statusText}. Please try again.`, null, null);
+        return;
+      }
+
+      const data = await res.json();
+
+      // Persist conversation ID for multi-turn
+      if (data.conversationId) conversationId = data.conversationId;
+
+      appendMessage('bot', data.response || 'No response received.', data.tool_used, data.latency_ms);
+
+    } catch (err) {
+      removeTyping();
+      appendMessage('bot', `Connection error: ${err.message}. Please check your network and try again.`, null, null);
+    } finally {
+      isLoading = false;
+      document.getElementById('sendBtn').disabled = false;
+      input.focus();
+    }
+  }
+</script>
+</body>
+</html>

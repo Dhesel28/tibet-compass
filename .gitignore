@@ -1,0 +1,7 @@
+.env
+*.zip
+package/
+__pycache__/
+*.pyc
+.DS_Store
+frontend/index.html.bak

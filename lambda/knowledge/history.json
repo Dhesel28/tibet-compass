@@ -1,0 +1,86 @@
+{
+  "ancient": [
+    {
+      "period": "7th century CE",
+      "event": "Founding of the Tibetan Empire",
+      "description": "King Songtsen Gampo (c. 617–649 CE) unified the Tibetan tribes and founded the Tibetan Empire, one of the most powerful states in Asia. He married Princess Wencheng of the Tang Dynasty and Princess Bhrikuti of Nepal, both of whom brought Buddhist influence to Tibet. He commissioned Thonmi Sambhota to develop the Tibetan script based on Indian models, giving Tibet its writing system.",
+      "keywords": ["songtsen gampo", "tibetan empire", "7th century", "empire", "ancient", "founder", "king", "thonmi sambhota", "script", "wencheng", "tang dynasty"]
+    },
+    {
+      "period": "8th century CE",
+      "event": "Introduction of Buddhism — Samye Monastery",
+      "description": "King Trisong Detsen (742–797 CE) invited Guru Rinpoche (Padmasambhava) and the Indian scholar Shantarakshita to Tibet. Together they established Samye, Tibet's first monastery, around 779 CE. This marked the formal establishment of Buddhism in Tibet. The famous debate at Samye between Indian and Chinese Buddhist schools resolved that Tibet would follow the Indian Madhyamaka tradition.",
+      "keywords": ["samye", "monastery", "trisong detsen", "padmasambhava", "guru rinpoche", "shantarakshita", "buddhism", "8th century", "ancient", "first monastery", "samye debate"]
+    },
+    {
+      "period": "9th–10th century CE",
+      "event": "Fragmentation and Dark Period",
+      "description": "King Langdarma (838–841 CE) suppressed Buddhism, leading to the fragmentation of the Tibetan Empire after his assassination. The period from 842–978 CE is known as the 'dark period' — the empire collapsed into regional kingdoms. Buddhism survived in scattered communities and was later revived in the 10th–11th centuries through figures like Rinchen Zangpo and Atisha.",
+      "keywords": ["langdarma", "dark period", "fragmentation", "empire collapse", "9th century", "10th century", "revival", "atisha", "rinchen zangpo"]
+    },
+    {
+      "period": "13th–14th century CE",
+      "event": "Mongol Patron-Priest Relationship",
+      "description": "Godan Khan invited the Sakya lama Sakya Pandita to his court in 1244, beginning the patron-priest (Cho-Yon) relationship between Mongol rulers and Tibetan Buddhist leaders. Kublai Khan later made Drogön Chögyal Phagpa the imperial preceptor of the Yuan Dynasty, giving the Sakya school authority over Tibet. This established the precedent of religious authority intertwined with political power.",
+      "keywords": ["mongol", "sakya", "patron priest", "cho-yon", "kublai khan", "phagpa", "yuan dynasty", "13th century", "political", "religious authority"]
+    },
+    {
+      "period": "15th century CE",
+      "event": "Founding of Gelug School and Major Monasteries",
+      "description": "Je Tsongkhapa (1357–1419) founded the Gelug ('virtuous') school of Tibetan Buddhism, emphasizing monastic discipline and the study of Madhyamaka philosophy. He founded Ganden Monastery in 1409. His disciples went on to establish Drepung (1416) and Sera (1419) monasteries near Lhasa, which became the largest monastic universities in the world.",
+      "keywords": ["tsongkhapa", "gelug", "ganden", "drepung", "sera", "monastery", "15th century", "monastic", "lhasa", "philosophy", "school"]
+    }
+  ],
+  "modern": [
+    {
+      "year": "1950",
+      "event": "People's Liberation Army Enters Tibet",
+      "description": "On October 7, 1950, the People's Liberation Army (PLA) of the newly established People's Republic of China crossed into Tibet. The small Tibetan army was quickly overwhelmed at the Battle of Chamdo. In May 1951, Tibet was forced to sign the 'Seventeen Point Agreement,' which the Tibetan government later repudiated, stating it was signed under duress.",
+      "keywords": ["1950", "pla", "chinese invasion", "peoples liberation army", "chamdo", "seventeen point agreement", "occupation", "modern history", "china"]
+    },
+    {
+      "year": "1959",
+      "event": "Tibetan Uprising and the Dalai Lama's Exile",
+      "description": "On March 10, 1959, thousands of Tibetans surrounded the Norbulingka Palace in Lhasa fearing the Chinese authorities planned to abduct the Dalai Lama. The uprising was violently suppressed. The Dalai Lama fled across the Himalayas into India on March 17, 1959, arriving in Dharamsala where he established the Central Tibetan Administration (government in exile). March 10 is now commemorated as Tibetan Uprising Day.",
+      "keywords": ["1959", "uprising", "march 10", "norbulingka", "dalai lama", "exile", "dharamsala", "india", "escape", "liberation", "tibetan uprising day", "central tibetan administration"]
+    },
+    {
+      "year": "1966–1976",
+      "event": "Cultural Revolution's Destruction of Tibetan Heritage",
+      "description": "During China's Cultural Revolution, thousands of Tibetan monasteries, temples, and cultural sites were destroyed. Red Guards and Tibetan collaborators demolished approximately 6,000 monasteries, burned religious texts, and persecuted monks, nuns, and traditional leaders. The period represented the most systematic destruction of Tibetan culture in history. Some sites have since been partially restored.",
+      "keywords": ["cultural revolution", "1966", "1976", "monastery destruction", "red guards", "religious persecution", "heritage loss", "6000 monasteries", "modern history"]
+    },
+    {
+      "year": "1989",
+      "event": "Dalai Lama Receives Nobel Peace Prize",
+      "description": "The 14th Dalai Lama, Tenzin Gyatso, was awarded the Nobel Peace Prize on December 10, 1989, for his nonviolent resistance to Chinese rule and his advocacy for the Tibetan people. The Nobel Committee cited his consistent opposition to violence and his promotion of peace, environmental values, and greater understanding between different peoples. His Nobel lecture outlined his Five-Point Peace Plan for Tibet.",
+      "keywords": ["nobel peace prize", "1989", "dalai lama", "tenzin gyatso", "nonviolent", "advocacy", "award", "five point peace plan", "international recognition"]
+    },
+    {
+      "year": "2008",
+      "event": "2008 Tibetan Protests",
+      "description": "In March 2008, large-scale protests erupted across Tibet and Tibetan regions of China, beginning in Lhasa on the anniversary of the 1959 uprising. The protests spread to Amdo and Kham regions. Chinese security forces cracked down heavily. The protests drew international attention ahead of the Beijing Olympics, sparking global solidarity demonstrations and relay protests along the Olympic torch route.",
+      "keywords": ["2008", "protest", "uprising", "lhasa", "olympics", "march 2008", "crackdown", "amdo", "kham", "solidarity", "torch relay"]
+    }
+  ],
+  "diaspora": [
+    {
+      "period": "1959–present",
+      "event": "Tibetan Diaspora — Life in Exile",
+      "description": "Following the 1959 exodus, around 100,000 Tibetans fled into exile, primarily in India, Nepal, and Bhutan. India provided land for settlement; Dharamsala (Himachal Pradesh) became 'Little Lhasa' and hosts the Central Tibetan Administration. Tibetan settlements were established across India at Bylakuppe (Karnataka), Bir (Himachal Pradesh), Majnukatilla (Delhi), and dozens more. The diaspora has since spread to Europe, North America, and Australia.",
+      "keywords": ["diaspora", "exile", "1959", "india", "dharamsala", "little lhasa", "bylakuppe", "settlement", "nepal", "bhutan", "central tibetan administration", "refugees"]
+    },
+    {
+      "period": "1990s–present",
+      "event": "Tibetan Community in the United States",
+      "description": "Tibetans began arriving in the US through the Tibetan U.S. Resettlement Project (1992–2000), which admitted 1,000 Tibetans. Communities formed in New York City (Woodside, Queens), Minneapolis, Boston, Seattle, Atlanta, and other cities. The Tibetan Association of America and local Tibetan associations support community members. New York City hosts the largest Tibetan population in the Western hemisphere.",
+      "keywords": ["united states", "usa", "resettlement", "new york", "woodside", "minneapolis", "boston", "seattle", "tibetan association", "community", "america", "diaspora usa"]
+    },
+    {
+      "period": "2011–present",
+      "event": "Sikyong (Elected Political Leadership)",
+      "description": "In 2011, the Dalai Lama formally transferred political authority to the democratically elected leadership of the Central Tibetan Administration. The head of government is now the Sikyong (formerly Kalon Tripa). Lobsang Sangay served two terms (2011–2021); Penpa Tsering was elected Sikyong in 2021. This transition marked Tibet's move toward democratic governance in exile.",
+      "keywords": ["sikyong", "lobsang sangay", "penpa tsering", "elected", "democracy", "central tibetan administration", "2011", "political", "government in exile", "kalon tripa"]
+    }
+  ]
+}

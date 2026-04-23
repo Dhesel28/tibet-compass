@@ -1,0 +1,110 @@
+{
+  "festivals": [
+    {
+      "name": "Losar",
+      "description": "Losar is the Tibetan New Year celebration, the most important festival in Tibet. It typically falls in February or March and is celebrated for 15 days. Families perform rituals, prepare traditional foods like khapse (fried pastries) and guthuk (noodle soup with dumplings), and make offerings at monasteries. The celebration begins with purification rituals on the 29th day of the 12th Tibetan month.",
+      "keywords": ["losar", "new year", "festival", "celebration", "tibetan year", "khapse", "guthuk", "holiday", "lunar"]
+    },
+    {
+      "name": "Saga Dawa",
+      "description": "Saga Dawa is the most sacred month in the Tibetan Buddhist calendar, commemorating the birth, enlightenment, and parinirvana of the Buddha Shakyamuni. It falls in the fourth month of the Tibetan lunar calendar. Tibetans perform acts of merit such as circumambulating sacred sites, releasing animals, and making offerings. The 15th day is the most auspicious.",
+      "keywords": ["saga dawa", "buddha", "sacred", "merit", "circumambulation", "enlightenment", "parinirvana", "holy month", "fourth month"]
+    },
+    {
+      "name": "Shoton Festival",
+      "description": "Shoton (literally 'yogurt banquet') is a festival that begins with the display of a giant thangka painting at Drepung Monastery near Lhasa, followed by Tibetan opera (lhamo) performances. It dates back to the 17th century. The festival lasts about a week and features vibrant cultural performances, picnics, and community gatherings.",
+      "keywords": ["shoton", "yogurt", "thangka", "drepung", "lhamo", "opera", "monastery", "lhasa", "performing arts", "festival"]
+    },
+    {
+      "name": "Butter Lamp Festival",
+      "description": "The Butter Lamp Festival (Chötrul Düchen) is celebrated on the 15th day of the first Tibetan month. Monasteries and homes display elaborate butter sculptures and light thousands of yak butter lamps. It commemorates the miracles performed by the Buddha. The air fills with the fragrance of burning butter lamps, and monks create intricate butter sculpture displays.",
+      "keywords": ["butter lamp", "chotrul", "yak butter", "sculpture", "light", "lamp", "miracle", "first month", "monks", "monastery"]
+    },
+    {
+      "name": "Tse-Chu",
+      "description": "Tse-Chu festivals mark the 10th day of each Tibetan lunar month, considered auspicious as the day Guru Rinpoche (Padmasambhava) performed miracles. Major Tse-Chu celebrations occur in major monasteries and feature masked Cham dances performed by monks, representing the subjugation of negative forces.",
+      "keywords": ["tsechu", "guru rinpoche", "padmasambhava", "cham", "masked dance", "tenth day", "monks", "ritual dance"]
+    }
+  ],
+  "food": [
+    {
+      "name": "Tsampa",
+      "description": "Tsampa is the staple food of Tibetan culture — roasted barley flour that forms the backbone of the Tibetan diet. It is mixed with yak butter tea (po cha) or water to form a dough called pak. Tsampa is deeply embedded in Tibetan identity; it is used in rituals, thrown in the air during celebrations, and carried by travelers and pilgrims.",
+      "keywords": ["tsampa", "barley", "flour", "food", "staple", "diet", "traditional food", "pak", "roasted", "grain"]
+    },
+    {
+      "name": "Po Cha (Butter Tea)",
+      "description": "Po cha, or butter tea, is Tibet's signature beverage — a blend of strong black tea, yak butter, and salt churned together. It provides essential calories and warmth in the high-altitude, frigid Tibetan climate. Offered to every guest as a gesture of hospitality, refusing it would be considered rude. It has a savory, creamy taste quite unlike regular tea.",
+      "keywords": ["butter tea", "po cha", "yak butter", "tea", "salt", "beverage", "drink", "hospitality", "traditional", "churned"]
+    },
+    {
+      "name": "Momos",
+      "description": "Momos are Tibetan dumplings — steamed or fried parcels filled with meat (yak, pork, chicken) or vegetables. They are one of the most beloved foods in Tibet and throughout the Himalayan region and have spread across the Tibetan diaspora globally. Served with spicy tomato or sesame dipping sauce, momos are central to Tibetan social gatherings.",
+      "keywords": ["momo", "dumpling", "steamed", "fried", "food", "yak", "meat", "vegetable", "himalayan", "snack", "meal"]
+    },
+    {
+      "name": "Thukpa",
+      "description": "Thukpa is a hearty noodle soup popular in Tibet and throughout the Himalayas. Made with hand-pulled noodles in a broth with meat, vegetables, and spices, it is a warming meal for cold mountain climates. Variations include thenthuk (flat noodles pulled by hand) and gyathuk (spaghetti-like noodles in a Chinese-influenced style).",
+      "keywords": ["thukpa", "noodle", "soup", "thenthuk", "gyathuk", "broth", "meal", "food", "hearty", "himalayan"]
+    },
+    {
+      "name": "Chang",
+      "description": "Chang is a traditional Tibetan fermented barley beer with a mild, slightly sour taste. It is a staple at festivals and social gatherings, often served in traditional wooden bowls. Chang plays a ceremonial role in Losar and other celebrations and is an important part of Tibetan hospitality culture.",
+      "keywords": ["chang", "beer", "barley", "fermented", "alcohol", "drink", "beverage", "festival", "losar", "traditional", "brew"]
+    }
+  ],
+  "arts": [
+    {
+      "name": "Thangka Painting",
+      "description": "Thangka (also spelled Tangka or Thanka) are Buddhist paintings on cotton or silk fabric depicting deities, mandalas, or scenes from the life of the Buddha. They serve as meditation aids, ritual objects, and narrative teaching tools. Creating a thangka requires years of training; artists follow strict iconographic rules. They are often mounted in elaborate silk brocade frames.",
+      "keywords": ["thangka", "painting", "art", "buddhist", "deity", "mandala", "silk", "cotton", "sacred art", "meditation", "monk", "artwork"]
+    },
+    {
+      "name": "Tibetan Calligraphy",
+      "description": "Tibetan calligraphy is a sacred art form used to copy religious texts, mantras, and prayers. The Tibetan script, developed by Thonmi Sambhota in the 7th century under King Songtsen Gampo, has distinctive letterforms. Calligraphy scripts include Uchen (formal, block-like) for sacred texts and Umé (cursive) for everyday writing.",
+      "keywords": ["calligraphy", "script", "writing", "uchen", "ume", "tibetan script", "thonmi sambhota", "art", "text", "mantra"]
+    },
+    {
+      "name": "Cham Dance",
+      "description": "Cham is a sacred masked dance performed by monks at monasteries during major festivals. Dancers wear elaborate costumes and large masks representing deities, protectors, and demons. The dance enacts the subjugation of negative forces and the triumph of dharma. It serves as both a spiritual practice and a public teaching.",
+      "keywords": ["cham", "dance", "masked dance", "monk", "monastery", "festival", "costume", "mask", "ritual", "sacred", "performing"]
+    },
+    {
+      "name": "Tibetan Sand Mandala",
+      "description": "Sand mandalas are intricate geometric designs painstakingly created by monks using colored sand over several days or weeks. They represent the palace of a particular deity and serve as a meditation tool and ritual offering. Upon completion, the mandala is ceremonially destroyed, and the sand is poured into a river — symbolizing impermanence.",
+      "keywords": ["sand mandala", "mandala", "sand", "monks", "geometric", "impermanence", "ritual", "meditation", "sacred", "art", "color"]
+    },
+    {
+      "name": "Lhamo (Tibetan Opera)",
+      "description": "Lhamo is the traditional Tibetan opera form, one of the oldest performing arts traditions in the world. Performances combine dance, song, drama, and elaborate costumes with painted masks. Stories are drawn from Buddhist tales, Tibetan history, and folk legends. Performances can last an entire day and are central to festivals like Shoton.",
+      "keywords": ["lhamo", "opera", "performing arts", "dance", "song", "drama", "mask", "festival", "theater", "traditional", "shoton"]
+    }
+  ],
+  "religion": [
+    {
+      "name": "Vajrayana Buddhism",
+      "description": "Tibetan Buddhism (Vajrayana or 'Diamond Vehicle') is the dominant religion of Tibet, blending Indian Buddhist philosophy with indigenous Bon traditions. It emphasizes tantric practices, guru devotion, and the aspiration for enlightenment for the benefit of all beings (Bodhicitta). The four main schools are Nyingma, Kagyu, Sakya, and Gelug.",
+      "keywords": ["vajrayana", "buddhism", "tibetan buddhism", "tantric", "bodhicitta", "enlightenment", "nyingma", "kagyu", "sakya", "gelug", "religion", "dharma"]
+    },
+    {
+      "name": "Bon Religion",
+      "description": "Bon is the indigenous spiritual tradition of Tibet predating the introduction of Buddhism. It includes shamanic practices, deity worship, ritual, and cosmological beliefs. Modern Bon has absorbed much Buddhist philosophy, and the two traditions have deeply influenced each other. Bon monasteries and practitioners survive to this day, especially among Tibetan diaspora communities.",
+      "keywords": ["bon", "indigenous", "shamanic", "pre-buddhist", "tibet", "religion", "spiritual", "ritual", "deity", "traditional"]
+    },
+    {
+      "name": "The Dalai Lama",
+      "description": "The Dalai Lama is the spiritual leader of Tibetan Buddhism and, traditionally, the political leader of Tibet. The current 14th Dalai Lama, Tenzin Gyatso, was born in 1935 and fled to India in 1959 after the Chinese occupation. He has lived in exile in Dharamsala, India ever since. He received the Nobel Peace Prize in 1989 for his nonviolent advocacy for Tibetan autonomy.",
+      "keywords": ["dalai lama", "tenzin gyatso", "spiritual leader", "14th dalai lama", "exile", "india", "dharamsala", "nobel", "peace", "religion", "leader", "reincarnation"]
+    },
+    {
+      "name": "Prayer Flags",
+      "description": "Tibetan prayer flags (lung ta — 'wind horse') are colorful rectangular cloths printed with mantras, prayers, and auspicious symbols strung outdoors. As the wind blows through them, prayers are believed to be carried to the heavens. They come in five colors representing the five elements: blue (sky/space), white (air/wind), red (fire), green (water), yellow (earth).",
+      "keywords": ["prayer flag", "lung ta", "wind horse", "mantra", "prayer", "colorful", "five elements", "tibet", "himalayan", "flag"]
+    },
+    {
+      "name": "Om Mani Padme Hum",
+      "description": "Om Mani Padme Hum is the most widely recited mantra in Tibetan Buddhism, associated with Avalokiteshvara (Chenrezig), the bodhisattva of compassion. Carved into stones, printed on prayer wheels and flags, and recited by millions, this six-syllable mantra encapsulates the teaching that the jewel of compassion purifies the mind and leads to enlightenment.",
+      "keywords": ["om mani padme hum", "mantra", "chenrezig", "avalokiteshvara", "compassion", "prayer", "six syllable", "bodhisattva", "meditation", "chant"]
+    }
+  ]
+}

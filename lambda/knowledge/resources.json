@@ -1,0 +1,85 @@
+{
+  "organizations": [
+    {
+      "name": "Central Tibetan Administration (CTA)",
+      "type": "Government in Exile",
+      "description": "The democratically elected government of Tibet in exile, headquartered in Dharamsala, India. Provides governance, education, health, and cultural preservation services to Tibetan diaspora communities worldwide. The Sikyong (elected leader) heads the executive branch. Maintains offices and representatives in many countries.",
+      "contact": "Website: tibet.net | Located in Dharamsala, Himachal Pradesh, India",
+      "keywords": ["central tibetan administration", "cta", "government", "exile", "dharamsala", "sikyong", "political", "official", "tibet"]
+    },
+    {
+      "name": "Tibet Fund",
+      "type": "US-based humanitarian organization",
+      "description": "Founded in 1981 and based in New York City, Tibet Fund provides grants for education, health care, economic development, and cultural preservation for Tibetans in exile in India and Nepal. It supports monasteries, nunneries, schools, and senior care. It is one of the largest Tibetan diaspora support organizations in the United States.",
+      "contact": "Website: tibetfund.org | New York City, USA",
+      "keywords": ["tibet fund", "new york", "humanitarian", "education", "health", "diaspora support", "grants", "USA", "organization", "nonprofit"]
+    },
+    {
+      "name": "Students for a Free Tibet (SFT)",
+      "type": "Advocacy / youth activism",
+      "description": "An international grassroots network of student and youth activists established in 1994 in New York City. SFT campaigns for Tibetan independence and human rights through nonviolent direct action, education, and organizing. It has chapters on college campuses worldwide and leads campaigns around key dates like March 10 (Tibetan Uprising Day).",
+      "contact": "Website: studentsforafreetibet.org | International chapters",
+      "keywords": ["students for a free tibet", "sft", "advocacy", "youth", "activism", "independence", "human rights", "campus", "college", "nonviolent"]
+    },
+    {
+      "name": "International Campaign for Tibet (ICT)",
+      "type": "Human rights and policy advocacy",
+      "description": "ICT is a leading international organization monitoring and reporting on events in Tibet since 1988. It advocates for Tibetan human rights at the US Congress, European Parliament, and UN. It publishes detailed research reports, maintains the TibetWatch monitoring program, and campaigns on specific political prisoners and freedom of expression issues.",
+      "contact": "Website: savetibet.org | Washington D.C., USA & Brussels, Belgium",
+      "keywords": ["ICT", "international campaign for tibet", "human rights", "advocacy", "congress", "UN", "political prisoners", "monitoring", "research", "savetibet"]
+    },
+    {
+      "name": "Tibetan Association of America (TAA)",
+      "type": "Community association",
+      "description": "The umbrella organization for Tibetan diaspora communities across the United States. Coordinates regional Tibetan associations in major cities, organizes cultural events, advocates for Tibetan rights with US lawmakers, and supports newly arrived Tibetan community members with integration resources.",
+      "contact": "Website: tibetanassociation.org | New York, USA",
+      "keywords": ["tibetan association", "TAA", "community", "diaspora", "USA", "regional", "advocacy", "cultural events", "integration"]
+    }
+  ],
+  "scholarships": [
+    {
+      "name": "Dalai Lama Trust Scholarships",
+      "type": "Academic scholarship",
+      "description": "The Dalai Lama Trust provides scholarships to Tibetan students in India for higher education in fields including medicine, law, engineering, and social sciences. Priority is given to students from poor families and those who demonstrate academic excellence. Applications are reviewed annually.",
+      "contact": "Website: dalailamatrust.org | Dharamsala, India",
+      "keywords": ["dalai lama trust", "scholarship", "education", "india", "tibetan students", "higher education", "academic", "funding", "students"]
+    },
+    {
+      "name": "Tibetan Scholarship Program (Tibet Fund)",
+      "type": "Academic scholarship",
+      "description": "Tibet Fund administers scholarships for Tibetan students in exile to attend colleges and universities in India and Nepal. Scholarships cover tuition, room, board, and supplies. This program has supported thousands of Tibetan students over 40 years and is a cornerstone of diaspora education.",
+      "contact": "Website: tibetfund.org/scholarships | Contact via New York office",
+      "keywords": ["tibet fund scholarship", "scholarship", "college", "university", "india", "nepal", "education", "financial aid", "diaspora", "students"]
+    },
+    {
+      "name": "US Government Tibetan Scholarship Program",
+      "type": "US government-funded scholarship",
+      "description": "The US State Department funds scholarships for Tibetan students from India and Nepal to study in the United States at the undergraduate and graduate levels. These scholarships are administered through institutions like the Institute of International Education (IIE). They are highly competitive and include full funding.",
+      "contact": "Website: state.gov (search Tibetan scholarships) | IIE: iie.org",
+      "keywords": ["US scholarship", "state department", "IIE", "united states", "graduate", "undergraduate", "tibetan students", "study abroad", "funding", "competitive"]
+    }
+  ],
+  "mental_health": [
+    {
+      "name": "Tibetan Healing Fund",
+      "type": "Mental health and trauma support",
+      "description": "The Tibetan Healing Fund provides mental health services specifically designed for Tibetan refugees and torture survivors, including those who have fled Tibet via the Himalayan route. Services include counseling, trauma therapy, and community healing programs. It works with newly arrived Tibetans who have experienced severe hardship.",
+      "contact": "Contact via Tibet Fund (tibetfund.org) | Services available in Dharamsala and major diaspora centers",
+      "keywords": ["mental health", "trauma", "healing", "therapy", "counseling", "refugee", "torture", "tibetan healing", "support", "diaspora"]
+    },
+    {
+      "name": "NAMI (with Tibetan Cultural Competency)",
+      "type": "Mental health resource (US-based)",
+      "description": "The National Alliance on Mental Illness (NAMI) offers helplines, support groups, and educational resources for South Asian and diaspora communities. Some chapters have worked with Tibetan community organizations to offer culturally sensitive services. The NAMI helpline (1-800-950-6264) provides crisis support.",
+      "contact": "NAMI Helpline: 1-800-950-NAMI (6264) | Website: nami.org",
+      "keywords": ["NAMI", "mental health", "helpline", "crisis", "support group", "US", "counseling", "diaspora", "south asian", "community"]
+    },
+    {
+      "name": "Tibetan Community Elders Support",
+      "type": "Community care for elders",
+      "description": "Many Tibetan settlements in India have elder care programs run through the Central Tibetan Administration's Department of Health. In the US, some Tibetan associations organize senior support groups, home visits, and cultural programs for elderly Tibetans who may face isolation, language barriers, and difficulty adapting to Western healthcare systems.",
+      "contact": "Contact local Tibetan association | CTA Dept of Health: tibet.net/departments/health",
+      "keywords": ["elders", "senior", "elderly", "community care", "isolation", "health", "support", "tibetan elders", "older adults", "wellbeing"]
+    }
+  ]
+}

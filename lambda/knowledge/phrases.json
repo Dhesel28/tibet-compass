@@ -1,0 +1,136 @@
+{
+  "greetings": [
+    {
+      "tibetan_script": "བཀྲ་ཤིས་བདེ་ལེགས།",
+      "wylie": "bkra shis bde legs",
+      "pronunciation": "Tashi Delek",
+      "meaning": "Auspiciousness and good fortune / Hello / Blessings",
+      "usage": "The most common Tibetan greeting, used for hello, goodbye, and as a blessing. Appropriate at any time and in any context. The response is the same: 'Tashi Delek!'",
+      "keywords": ["tashi delek", "hello", "greeting", "blessing", "good luck", "auspicious", "hi", "common phrase", "welcome"]
+    },
+    {
+      "tibetan_script": "ཁྱེད་རང་བདེ་མོ་ཡིན་བམ།",
+      "wylie": "khyed rang bde mo yin bam",
+      "pronunciation": "Khyerang demo yinbam?",
+      "meaning": "How are you? (to a woman)",
+      "usage": "Polite inquiry about wellbeing, directed at a female. The male version is 'Khyerang demo yinpey?'",
+      "keywords": ["how are you", "wellbeing", "polite", "greeting", "question", "health", "check in"]
+    },
+    {
+      "tibetan_script": "ང་བདེ་པོ་ཡིན།",
+      "wylie": "nga bde po yin",
+      "pronunciation": "Nga demo yin",
+      "meaning": "I am fine / I am well",
+      "usage": "Standard response to 'how are you.' Can add 'Khyerang?' meaning 'And you?'",
+      "keywords": ["i am fine", "i am well", "response", "good", "reply", "wellbeing"]
+    },
+    {
+      "tibetan_script": "གལེ་ཕེབས།",
+      "wylie": "gale phebs",
+      "pronunciation": "Galé Phebs",
+      "meaning": "Please go gently / Goodbye (to someone leaving)",
+      "usage": "Said to someone who is departing. The equivalent said by the person leaving is 'Galé Shu' (please stay gently).",
+      "keywords": ["goodbye", "farewell", "leaving", "parting", "departure", "gale phebs", "gale shu"]
+    },
+    {
+      "tibetan_script": "ཐུགས་རྗེ་ཆེ།",
+      "wylie": "thugs rje che",
+      "pronunciation": "Thuk-je Che",
+      "meaning": "Thank you (formal/respectful)",
+      "usage": "The formal/respectful form of 'thank you,' derived from 'great compassion.' Used for elders, monks, lamas, and formal situations. Casual thank you: 'Ka-drin-che-la'",
+      "keywords": ["thank you", "thanks", "gratitude", "formal", "respectful", "thukje che", "appreciation"]
+    }
+  ],
+  "everyday": [
+    {
+      "tibetan_script": "ལགས།",
+      "wylie": "lags",
+      "pronunciation": "La",
+      "meaning": "Yes / Honorific particle (shows respect)",
+      "usage": "Used as 'yes' or added to sentences/names as a sign of respect. E.g., addressing someone as 'Tenzin La' shows respect.",
+      "keywords": ["yes", "la", "respect", "honorific", "affirmative", "polite"]
+    },
+    {
+      "tibetan_script": "མིན།",
+      "wylie": "min",
+      "pronunciation": "Min",
+      "meaning": "No / It is not",
+      "usage": "Simple negation. 'Min' for nouns/adjectives; 'Ma yin' is a more emphatic negative.",
+      "keywords": ["no", "min", "negative", "negation", "not", "denial"]
+    },
+    {
+      "tibetan_script": "ང་རང་གི་མིང་ལ།",
+      "wylie": "nga rang gi ming la ... zer",
+      "pronunciation": "Ngé ming la ... ser",
+      "meaning": "My name is ...",
+      "usage": "Use this phrase followed by your name to introduce yourself. 'Ngé ming la Tenzin zer' = 'My name is Tenzin.'",
+      "keywords": ["my name is", "introduction", "name", "introduce yourself", "identity"]
+    },
+    {
+      "tibetan_script": "གཤམ་ལ་སླེབས་ཀྱི་ཡིན།",
+      "wylie": "gsham la slebs kyi yin",
+      "pronunciation": "Sham-la lep-gi-yin",
+      "meaning": "I am going down / I am coming",
+      "usage": "Common directional expression used in everyday navigation.",
+      "keywords": ["going", "coming", "direction", "movement", "everyday"]
+    },
+    {
+      "tibetan_script": "ཁ་ལག་ཞིམ་པོ་འདུག",
+      "wylie": "kha lag zhim po 'dug",
+      "pronunciation": "Khalag shimbo dug",
+      "meaning": "The food is delicious",
+      "usage": "A compliment to a cook or host after eating. 'Khalag' = food, 'shimbo' = delicious, 'dug' = it is (evidential).",
+      "keywords": ["food", "delicious", "tasty", "compliment", "eating", "khalag", "meal"]
+    },
+    {
+      "tibetan_script": "གང་ཡིན།",
+      "wylie": "gang yin",
+      "pronunciation": "Gang yin?",
+      "meaning": "What is it? / What?",
+      "usage": "A basic question asking 'what is this?' Used in everyday curiosity or confusion.",
+      "keywords": ["what", "question", "inquiry", "what is it", "clarification"]
+    }
+  ],
+  "spiritual": [
+    {
+      "tibetan_script": "ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྂ།",
+      "wylie": "om ma ni pad me hung",
+      "pronunciation": "Om Mani Padme Hum",
+      "meaning": "The jewel is in the lotus / Mantra of compassion",
+      "usage": "The most sacred mantra in Tibetan Buddhism, associated with Chenrezig (Avalokiteshvara), the bodhisattva of compassion. Recited millions of times by Tibetans daily, carved on stones (mani stones), and placed in prayer wheels. Each syllable corresponds to a realm of suffering being purified.",
+      "keywords": ["om mani padme hum", "mantra", "compassion", "chenrezig", "prayer", "sacred", "six syllable", "chant", "meditation", "recite", "prayer wheel"]
+    },
+    {
+      "tibetan_script": "རིན་པོ་ཆེ།",
+      "wylie": "rin po che",
+      "pronunciation": "Rinpoche",
+      "meaning": "Precious one (honorific title for high lamas)",
+      "usage": "Title of respect for recognized reincarnate lamas (tulkus). 'Precious one' in Tibetan. E.g., 'His Holiness Dalai Lama Rinpoche.' Not used casually.",
+      "keywords": ["rinpoche", "lama", "title", "honorific", "reincarnate", "tulku", "precious", "teacher", "spiritual"]
+    },
+    {
+      "tibetan_script": "འགྲོ་བ་ཀུན་བདེ་ཐོབ་པར་ཤོག",
+      "wylie": "'gro ba kun bde thob par shog",
+      "pronunciation": "Drowa kün dé thob par shok",
+      "meaning": "May all beings attain happiness",
+      "usage": "A traditional Tibetan Buddhist aspiration prayer (Bodhicitta prayer). Often recited at the end of prayers or meditation sessions to dedicate merit to all sentient beings.",
+      "keywords": ["prayer", "aspiration", "all beings", "happiness", "bodhicitta", "merit", "dedication", "compassion", "meditation", "spiritual"]
+    },
+    {
+      "tibetan_script": "སྐྱབས་སུ་མཆིའོ།",
+      "wylie": "skyabs su mchi'o",
+      "pronunciation": "Kyab su chi-o",
+      "meaning": "I take refuge (in the Three Jewels)",
+      "usage": "The act of taking refuge in the Buddha, Dharma, and Sangha — the foundational vow of Buddhism. Recited at the beginning of all prayers and teachings.",
+      "keywords": ["refuge", "three jewels", "buddha", "dharma", "sangha", "vow", "prayer", "foundation", "buddhist practice"]
+    },
+    {
+      "tibetan_script": "དགེ་བ་འདི་ཡིས།",
+      "wylie": "dge ba 'di yis",
+      "pronunciation": "Gewa di yi",
+      "meaning": "By this virtue / Merit dedication (opening of dedication prayer)",
+      "usage": "Opening words of the traditional merit dedication prayer recited after completing any virtuous activity, prayer, or practice. The full dedication: 'By this virtue, may I attain enlightenment for the benefit of all beings.'",
+      "keywords": ["merit", "dedication", "virtue", "prayer", "completion", "practice", "gewa", "dedicate", "enlightenment"]
+    }
+  ]
+}

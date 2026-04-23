@@ -1,0 +1,12 @@
+# Tibet Compass — Python Dependencies
+# Lambda runtime (Python 3.12) includes boto3 natively.
+# For local development, install these:
+
+boto3>=1.34.0
+botocore>=1.34.0
+
+# For evaluation and metrics scripts
+requests>=2.31.0
+
+# Optional: for compute_metrics.py --chart flag
+# matplotlib>=3.8.0
